@@ -116,7 +116,11 @@ local function QQNFUAU_fake_script() -- Button.LocalScript
 	function protectId(id)
 		local t = "%3"
 		local split = string.split(tostring(id),"")
-		return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7]..t..split[8]..t..split[9]..t..split[10])
+		if split.len == 9 then
+			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7]..t..split[8]..t..split[9])
+		else
+			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7]..t..split[8]..t..split[9]..t..split[10])
+		end
 	end
 	script.Parent.MouseButton1Click:Connect(function()
 		local d = script.Parent.Parent.Parent.TextBox.Text
