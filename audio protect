@@ -113,25 +113,21 @@ TextBox.TextWrapped = true
 local function QQNFUAU_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
-	function protectId(id)
-		local t = "%3"
-		local split = string.split(tostring(id),"")
-		local length = string.len(tostring(id))
-		if length == 9 then
-			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7]..t..split[8]..t..split[9])
-		elseif length == 8 then
-			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7]..t..split[8])
-		elseif length == 7 then
-			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7])
-		elseif length == 6 then
-			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6])
-		elseif length == 10 then
-			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7]..t..split[8]..t..split[9]..t..split[10])
-		end
+	function Format(Int)
+	return string.format("%02i", Int)
+end
+
+function confuzzle(str)
+	if tonumber(str) then
+		str = ("0x%02x"):format(str)
 	end
+	return (str:gsub(".", function(s)
+		return ("%%%02x"):format(s:byte())
+	end))
+end
 	script.Parent.MouseButton1Click:Connect(function()
 		local d = script.Parent.Parent.Parent.TextBox.Text
-		setclipboard(protectId(d))
+		setclipboard(confuzzle(d))
 	end)
 end
 coroutine.wrap(QQNFUAU_fake_script)()
