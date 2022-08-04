@@ -14,7 +14,7 @@ local TextBox = Instance.new("TextBox")
 
 ProtectId.Name = "Protect Id"
 ProtectId.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
+ProtectId.ResetOnSpawn = false
 Gradient.Name = "Gradient"
 Gradient.Parent = ProtectId
 Gradient.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
