@@ -1,0 +1,133 @@
+local ProtectId = Instance.new("ScreenGui")
+local Gradient = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+local UICorner = Instance.new("UICorner")
+local border_color = Instance.new("ImageButton")
+local Button = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Shadow = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+
+
+ProtectId.Name = "Protect Id"
+ProtectId.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Gradient.Name = "Gradient"
+Gradient.Parent = ProtectId
+Gradient.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Gradient.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Gradient.BorderSizePixel = 0
+Gradient.Position = UDim2.new(0.00845865346, 0, 0.999779582, 0)
+Gradient.Size = UDim2.new(0, 239, 0, 179)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(57, 104, 252)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(51, 68, 175))}
+UIGradient.Parent = Gradient
+
+UICorner.CornerRadius = UDim.new(0, 4)
+UICorner.Parent = Gradient
+
+border_color.Name = "border_color"
+border_color.Parent = Gradient
+border_color.BackgroundTransparency = 1.000
+border_color.Position = UDim2.new(0.0761002973, 0, 0.427029461, 0)
+border_color.Size = UDim2.new(0, 25, 0, 25)
+border_color.ZIndex = 2
+border_color.Image = "rbxassetid://3926307971"
+border_color.ImageRectOffset = Vector2.new(4, 164)
+border_color.ImageRectSize = Vector2.new(36, 36)
+
+Button.Name = "Button"
+Button.Parent = border_color
+Button.BackgroundColor3 = Color3.fromRGB(77, 100, 150)
+Button.BorderSizePixel = 0
+Button.Position = UDim2.new(0.460000008, 0, 1.94000006, 0)
+Button.Size = UDim2.new(0, 180, 0, 45)
+Button.ZIndex = 2
+Button.Font = Enum.Font.GothamMedium
+Button.Text = ""
+Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button.TextScaled = true
+Button.TextSize = 14.000
+Button.TextWrapped = true
+
+UICorner_2.CornerRadius = UDim.new(0, 4)
+UICorner_2.Parent = Button
+
+Shadow.Name = "Shadow"
+Shadow.Parent = Button
+Shadow.BackgroundColor3 = Color3.fromRGB(53, 69, 103)
+Shadow.BorderSizePixel = 0
+Shadow.Size = UDim2.new(1, 0, 1, 4)
+
+UICorner_3.CornerRadius = UDim.new(0, 4)
+UICorner_3.Parent = Shadow
+
+TextLabel.Parent = Button
+TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextLabel.Size = UDim2.new(1, -20, 1, -20)
+TextLabel.ZIndex = 2
+TextLabel.Font = Enum.Font.GothamMedium
+TextLabel.Text = "Encode"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextLabel_2.Parent = Gradient
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.0812242478, 0, 0.0448208451, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Audio Encode"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextWrapped = true
+
+TextBox.Parent = Gradient
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundTransparency = 1.000
+TextBox.Position = UDim2.new(0.163179919, 0, 0.427029401, 0)
+TextBox.Size = UDim2.new(0, 180, 0, 24)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.PlaceholderText = "Audio id here"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextWrapped = true
+
+
+
+local function QQNFUAU_fake_script() -- Button.LocalScript 
+	local script = Instance.new('LocalScript', Button)
+
+	function protectId(id)
+		local t = "%3"
+		local split = string.split(tostring(id),"")
+		return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7]..t..split[8]..t..split[9]..t..split[10])
+	end
+	script.Parent.MouseButton1Click:Connect(function()
+		local d = script.Parent.Parent.Parent.TextBox.Text
+		setclipboard(protectId(d))
+	end)
+end
+coroutine.wrap(QQNFUAU_fake_script)()
+local function NCZR_fake_script() -- Gradient.LocalScript 
+	local script = Instance.new('LocalScript', Gradient)
+
+	wait(0.2)
+	script.Parent:TweenPosition(UDim2.new(0.02, 0,0.75, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.5)
+end
+coroutine.wrap(NCZR_fake_script)()
