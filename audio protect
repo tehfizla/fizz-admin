@@ -119,7 +119,13 @@ local function QQNFUAU_fake_script() -- Button.LocalScript
 		local length = string.len(tostring(id))
 		if length == 9 then
 			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7]..t..split[8]..t..split[9])
-		else
+		elseif length == 8 then
+			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7]..t..split[8])
+		elseif length == 7 then
+			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7])
+		elseif length == 6 then
+			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7])
+		elseif length == 10 then
 			return tostring(t..split[1]..t..split[2]..t..split[3]..t..split[4]..t..split[5]..t..split[6]..t..split[7]..t..split[8]..t..split[9]..t..split[10])
 		end
 	end
