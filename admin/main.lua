@@ -24,8 +24,9 @@ local function webImport(file)
 end
 
 webImport("coreguibypass")
-
-game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[🎶] Welcome to Fizz admin "..game.Players.LocalPlayer.Name..", Your rank: "..getrank(game.Players.LocalPlayer).."! Current prefix is '"..prefix.."'","All")
+if welcomechat == true then
+	game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[🎶] Welcome to Fizz admin "..game.Players.LocalPlayer.Name..", Your rank: "..getrank(game.Players.LocalPlayer).."! Current prefix is '"..prefix.."'","All")
+end
 game:GetService("StarterGui").ResetPlayerGuiOnSpawn = false
 function GetPlayer(String)
     local plr
