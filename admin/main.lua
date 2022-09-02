@@ -1,3 +1,4 @@
+
 local owner = "tehfizla"
 local branch = "coolshit"
 
@@ -15,6 +16,15 @@ getgenv().lp = game.Players.LocalPlayer
 function getrank(user)
     if user.CharacterAppearanceId==261862031 then return"Creator"else return"Guest"end
 end
+local owner = "tehfizla"
+local branch = "coolshit"
+
+local function webImport(file)
+    return loadstring(game:HttpGet(("https://raw.githubusercontent.com/%s/fizz-admin/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+end
+
+webImport("coreguibypass")
+
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[🎶] Welcome to Fizz admin "..game.Players.LocalPlayer.Name..", Your rank: "..getrank(game.Players.LocalPlayer).."! Current prefix is '"..prefix.."'","All")
 game:GetService("StarterGui").ResetPlayerGuiOnSpawn = false
 function GetPlayer(String)
